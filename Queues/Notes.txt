@@ -1,0 +1,21 @@
+Queues
+Sharing a resource amongst many consumers
+Printers
+Operating systems
+Web servers
+Live support systems
+
+first-in first-out (FIFO)
+
+Priority queues
+- Items are processed based on their priorities instead of the order
+- Adding a new item to priority queue is O(n)
+
+Operations - All time O(1)
+enqueue
+dequeue
+peek
+isEmpty
+isFull
+
+Queues can be implemented using Arrays / Linked Lists / Stacks

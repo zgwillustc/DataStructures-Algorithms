@@ -1,0 +1,68 @@
+Perfect tree
+
+Complete tree
+
+Balanced tree
+  - height(left) - height(right) <= 1 (for every node)
+
+BST operation is O(log n) if BST is balanced
+otherwise the worst case is O(n) - like a linked list
+
+Self-balancing trees
+  - AVL trees (Adelson-Velsky and Landis)
+  - Red-black trees
+  - B-trees
+  - Splay trees
+  - 2-3 trees
+
+AVL trees
+  - Rotations
+    - Left (LL)
+    - Right (RR)
+    - Left-Right (LR)
+    - Right-Left (RL
+
+  balance factor = height(left) - height(right)
+    BF > 1  -> left heavy  -> Right rotation
+    BF < -1 -> right heavy -> Left rotation
+
+example:
+Tree      balance factor
+Right heavy of 10
+10        (-2)
+  20      (-1)
+    30
+leftRotate(10)
+
+10        (-2)
+  30      (1)
+20
+rightRotate(30) since balancefactor of 30 > 0
+leftRotate(10)
+
+Left heavy of 30
+    30    (2)
+  20      (1)
+10
+rightRotate(30)
+
+  30      (2)
+10        (-1)
+  20
+leftRotate(10) since balancefactor of 10 < 0
+rightRotate(30)
+
+
+
+10        Root
+   20     newRoot
+15    30
+
+leftRotate(10)
+newRoot = Root.right
+Root.right = newRoot.left
+newRoot.left = root
+
+   20     newRoot
+10    30
+   15

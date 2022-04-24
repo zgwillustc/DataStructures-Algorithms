@@ -1,0 +1,45 @@
+Tree -> Nodes - Root & Leaf
+Root: node has children - depth = 0
+Leaf: node has no children - height = 0
+
+Represent hierarchical data
+Databases
+Autocompletion
+Compilers
+Compressions (JPEG, MP3)
+
+Binary Tree -> each node has a maximum of two children
+
+Binary Search Tree
+left.value < node.value < right.value
+all left                  all right
+
+isBST - Recursion
+Minimum value of a binary search tree is the leftmost node value
+Maximum value of a binary search tree is the rightmost node value
+
+Operations in Binary Search Tree
+Lookup O(log n)
+Insert O(log n)
+Delete O(log n)
+
+
+Tree Traversal
+  - Breadth first
+      - level order traversal
+  - Depth first
+      - pre-order traversal:  root -> left -> right
+      - in-order traversal:   left -> root -> right
+            - traverse on a binary search tree -> values in ascending order
+      - post-order traversal: left -> right -> root
+            - leaf nodes first
+                    - Height of Tree
+                    - Minimum value in a Tree
+
+
+Depth and Height of Tree
+ - Depth: Count from root to leaf (maximum path)
+ - Height: Count from leaf to root (maximum path) - post-order traversal
+
+
+Nodes at K Distance from the Root - Recursion

@@ -1,0 +1,15 @@
+Stacks
+Implement the undo features
+Build compliers (eg syntax checking)
+Evaluate expressions (eg 1 + 2 * 3)
+Build navigation (eg forward/back)
+
+last-in first-out (LIFO)
+
+Operations - All time O(1)
+push(item)
+pop()
+peek()
+isEmpty()
+
+Stacks can be implemented using Arrays / Linked Lists

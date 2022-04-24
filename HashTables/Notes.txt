@@ -1,0 +1,42 @@
+Hash Tables (or dictionaries)
+
+Spell checkers
+Dictionaries
+Compilers
+Code editors
+
+Different names in different programming languages
+Java = HashMap
+JavaScript = Object
+Python or C# = Dictionary
+
+key - value pair (do not allow duplicate keys)
+Hash function - deterministic
+
+Operations - Time O(1)
+Insert
+Lookup
+Delete
+
+
+Sets (do not allow duplicate keys) - a special type of Hash Tables
+keys
+(keys also do not allow mutable items, which are unhashable)
+
+
+
+Hash Functions
+key -> hash -> address to store the value
+
+hash(key) % hash_table_size
+
+Collision - keys have the same hash value
+Solution
+- chaining -> linked list
+- open addressing (may be full if a lot of keys)
+        -> linear probing: (hash(key) + i) % hash_table_size ; disadvantage: cluster
+        -> quadratic probing: (hash(key) + i^2) % hash_table_size ; disadvantage: infinite loop due to the same steps
+        -> double hashing: use a second hash function
+                            hash1(key) = key%hash_table_size
+                            hash2(key) = prime - (key%prime)
+                            (hash1(key)+i*hash2(key))%hash_table_size

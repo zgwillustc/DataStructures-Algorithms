@@ -1,0 +1,8 @@
+Recursion
+ - implementing repetitions
+
+eg. factorial
+
+Iteration vs Recursion
+
+Subproblems
