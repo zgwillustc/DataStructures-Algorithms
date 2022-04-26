@@ -30,7 +30,7 @@ class PriorityQueue: # Assume the Queue is in ascending order
                 self.__items[i+1] = self.__items[i]
             else:
                 break
-            i -=
+            i -= 1
         return i+1
 
     def __str__(self):
