@@ -1,0 +1,35 @@
+Complete tree
+  - A tree in which every level, except possibly the deepest, is entirely filled. At the deepest level, all nodes are as far left as possible.
+
+Heap
+  - A complete binary tree that satisfies the heap property:
+    - The value of node is equal to or greater than its children -> Max Heap
+    - The value of node is equal to or less than its children -> Min Heap
+
+Applications
+  - Sorting (HeapSort)
+  - Graph algorithms (shortest path)
+  - Priority queues
+  - Finding the kth smallest/largest value
+
+Operation
+  - insert(): O(log n)     log n is the height of the tree
+  - remove(): O(log n)
+  - findmax(): O(1) - Max Heap
+  - findmin(): O(1) - Min Heap
+
+Heap can be implemented using Array, although it is tree.
+          Node (index)
+            20 (0)
+      10 (1)      15 (2)
+4 (3)       5 (4)
+
+leftChildIndex = parentIndex * 2 + 1
+rightChildIndex = parentIndex * 2 + 2
+parentIndex = (childIndex - 1) // 2
+
+Heapify
+  - No need to Heapify the leaf nodes at the last level
+  - lastParent = n // 2 - 1
+
+Find kth largest number in a list
