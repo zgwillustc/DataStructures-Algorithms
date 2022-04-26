@@ -1,0 +1,26 @@
+Trie
+  - A kind of tree but not binary tree
+  - The root is None and all other nodes can have multiple children (k-ary)
+  - reTRIEval
+  - Other names: Digital / Radix / Prefix tree
+
+     root
+  B       C
+A   O     A
+G   Y     T
+
+Applications
+  - Autocompletion
+
+Operation
+  - Lookup: O(L) L is the length of word to lookup
+  - Insert: O(L)
+  - Delete: O(L)
+
+Traverse a Trie
+  - pre-order traversal : root -> leaf
+      - good to print a word in the Trie
+  - post-order traversal : leaf -> root
+      - good to delete a word in the Trie
+
+Autocompletion Implementation
