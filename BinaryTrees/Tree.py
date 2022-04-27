@@ -54,7 +54,7 @@ class Tree:
 
     def __height(self, root):
         if root == None:
-            rturn -1
+            return -1
         if self.__isLeaf(root):
             return 0
         return 1 + max(self.__height(root.leftChild),
