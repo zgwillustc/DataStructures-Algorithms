@@ -1,0 +1,53 @@
+Graphs
+ - To represent connected objects
+
+Applications
+  - Shortest path
+  - Find the order to process a series of jobs/projects that depend on each other - topological sorting
+
+node - vertex (vertices)
+adjacent - neighbor
+edge
+weight
+
+Directed graph
+Undirected graph
+
+(number of nodes/vertices - V; number of edges - E)
+(A dense graph: every node is connected to all other nodes -> E = V*(V-1))
+Implementation of graphs
+  - Adjacency Matrix -> 2D array ; a hash table to store the indexes of all nodes
+          - Space complexity: O(V^2)
+          - Add node: O(V^2)
+          - Remove node: O(V^2)
+          - Add edge: O(1)
+          - Remove edge: O(1)
+          - Query edge: O(1)
+          - Find neighbors: O(V)
+  - Adjacency List -> An array of linked lists ; a hash table to store the indexes of all nodes
+          - Space complexity: O(V+E) - worst case: O(V^2)
+          - Add node: O(1)
+          - Remove node: O(V^2)
+          - Add edge: O(K) K is the number of edges a given node has - worst case: O(V)
+          - Remove edge: O(K) - worst case: O(V)
+          - Query edge: O(K) - worst case: O(V)
+          - Find neighbors: O(K) - worst case: O(V)
+ * Use Adjacency Matrix for very dense graphs
+ * Otherwise Adjacency List is more efficient
+
+
+Traversal in Graph
+  - Depth first search
+      - Recursion
+      - Iteration - use Stack
+  - Breadth first search
+      - Iteration - use Queue
+
+
+Topological Sort
+  - Work on graphs without cycles - directed acyclic graph
+  - May get different results
+
+Cycle Detection
+  - three sets containing nodes: all, visiting, visited
+  - Hash table to store the elements in the cycle
