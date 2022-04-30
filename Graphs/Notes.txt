@@ -2,7 +2,7 @@ Graphs
  - To represent connected objects
 
 Applications
-  - Shortest path
+  - Shortest path between two nodes -> weighted graph
   - Find the order to process a series of jobs/projects that depend on each other - topological sorting
 
 node - vertex (vertices)
@@ -11,7 +11,7 @@ edge
 weight
 
 Directed graph
-Undirected graph
+Undirected graph - Weighted graph
 
 (number of nodes/vertices - V; number of edges - E)
 (A dense graph: every node is connected to all other nodes -> E = V*(V-1))
@@ -48,6 +48,42 @@ Topological Sort
   - Work on graphs without cycles - directed acyclic graph
   - May get different results
 
-Cycle Detection
+Cycle Detection of Directed Graphs
   - three sets containing nodes: all, visiting, visited
   - Hash table to store the elements in the cycle
+
+
+Dijkstra's Algorithm - finding the shortest path between two nodes in a weighted graph
+    - A greedy algorithm: find the optimal solution to a problem by making optimal choices at each step
+    - Use Breadth First Traversal - Queue - Priority Queue
+    * Pseudo code:
+      for each neighbor
+        if found shorter path
+          update distances table
+          push neighbor to priority queue
+Distances Table:
+  Node  Distance  Previous
+  A     0
+  B     MAX
+  C     MAX
+  D     MAX
+  E     MAX
+-> HashTable <Node, Distance> distances
+-> HashTable <Node, PreviousNode> previousNodes   - needed to find the path. not required for just shortest distance
+
+
+Cycle Detection of Undirected Graphs
+  - visited
+
+
+(Tree is a graph without cycles)
+Spanning Tree
+  - each node is connected directly or indirectly to other nodes without cycles
+  - n nodes in the graph, the spanning tree of this graph has n-1 edges
+Minimum Spanning Tree of a Graph
+  - Prim’s Algorithm <- a greedy algorithm
+      - Extend the tree by adding the smallest *connected* edge
+          - Implementation:
+              - Use a priority queue to store the neighbors
+              - Repeat until tree has all the nodes
+              - Represent the tree using WeightedGraph
