@@ -1,0 +1,94 @@
+Sorting Algorithms
+  Comparison Sorts
+  - Bubble sort
+  - Selection sort
+  - Insertion sort
+  - Merge sort
+  - Quick sort
+  Non-comparison sorts - use basic math
+  - Counting sort
+  - Bucket sort
+  - Radix sort
+
+Bubble Sort
+  Time Complexity
+                Best    Worst
+  Passes        O(1)    O(n)
+  Comparisons   O(n)    O(n)
+  Total         O(n)    O(n^2)
+                linear  Quadratic
+  For each pass, compare and swap the larger one to the right
+
+Selection Sort
+  Time Complexity
+                Best        Worst
+  Passes        O(n)        O(n)
+  Comparisons   O(n)        O(n)
+  Total         O(n)        O(n^2)
+                Quadratic   Quadratic
+  For each pass, find the minimum value of the unsorted part and swap it to the beginning of the unsorted part
+
+Insertion Sort
+  Time Complexity
+                Best     Worst
+  Iteration     O(n)     O(n)
+  Shift items   O(1)     O(n)
+  Total         O(n)     O(n^2)
+                Linear   Quadratic
+  For each iteration, shift items to insert the first item of the unsorted part to the right position of the sorted part.
+
+Merge Sort - Divide and Conquer - Recursion
+  Time Complexity
+                Best        Worst
+  Dividing      O(log n)    O(log n)
+  Merging       O(n)        O(n)
+  Total         O(n log n)  O(n log n)
+  Space         O(n)        O(n)
+  Split (middle = length/2) until single item left, then merge back (two pointers).
+  Allocate additional space
+  * in-place MergeSort requires no additional space
+
+Quick Sort
+  Time Complexity
+                Best        Worst
+  Partitioning  O(n)        O(n)
+  # of times    O(log n)    O(n)
+  Total         O(n log n)  O(n^2)
+  Space         O(log n)    O(n)
+  (prefer Quick Sort over Merge Sort since at good conditions, Quick Sort requires less space)
+  Pick the Pivot (eg, the last number in the array),
+  partition the array so that one side is all smaller than the pivot, the other side is all larger than the pivot
+  * Partitioning - b, i, pivot
+      - b -> boundary of left partition
+      - i -> current
+  * Pick the pivot (reduce the chances of worst complexity case)
+      - Pick the last item
+      - Pick randomly
+      - Use the middle index
+      - Average of first, middle and last item
+
+Time-Memory Trade-off
+
+Counting Sort
+  Time Complexity
+  Populate counts   O(n)
+  Iterate counts    O(K)
+  Total             O(n)
+  Space             O(K)
+  The numbers are in the range of [0, K] (values are positive integers)
+  Count the frequency of the distinct numbers (need extra space to store the counts)
+  * have application limitations
+  * It is better if most of the values in the range are present in the array
+
+Bucket Sort
+  Time Complexity
+                      Best        Worst
+  Distribution        O(n)        O(n)
+  Iterating Buckets   O(K)        O(K)
+  Sorting             O(1)        O(n^2) (depending on the inner sorting algorithm)
+  Total               O(n+K)      O(n^2)
+  Space:    O(n+K)
+  Bucket # to store the item = item // numberOfBuckets
+  K Buckets are stored in an new array
+  Each bucket uses (linked) list to store the items and are sorted using another sorting algorithm
+  * More buckets, faster but more space / Fewer buckets, slower and less space
