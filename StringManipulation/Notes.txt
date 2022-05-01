@@ -1,0 +1,99 @@
+Useful methods
+str.split()
+str.join()
+str.find()
+str.index()
+str.lower()
+str.strip()
+
+list.sort()
+list.reverse()
+
+reversed()
+
+
+class variable vs static variable
+# Python program to show that the variables with a value
+# assigned in class declaration, are class variables
+
+# Class for Computer Science Student
+class CSStudent:
+	stream = 'cse'				 # Class Variable
+	def __init__(self,name,roll):
+		self.name = name		 # Instance Variable
+		self.roll = roll		 # Instance Variable
+
+# Objects of CSStudent class
+a = CSStudent('Geek', 1)
+b = CSStudent('Nerd', 2)
+
+print(a.stream) # prints "cse"
+print(b.stream) # prints "cse"
+print(a.name) # prints "Geek"
+print(b.name) # prints "Nerd"
+print(a.roll) # prints "1"
+print(b.roll) # prints "2"
+
+# Class variables can be accessed using class
+# name also
+print(CSStudent.stream) # prints "cse"
+
+# Now if we change the stream for just a it won't be changed for b
+a.stream = 'ece'
+print(a.stream) # prints 'ece'
+print(b.stream) # prints 'cse'
+
+# To change the stream for all instances of the class we can change it
+# directly from the class
+CSStudent.stream = 'mech'
+
+print(a.stream) # prints 'ece'
+print(b.stream) # prints 'mech'
+
+# Output:
+# cse
+# cse
+# Geek
+# Nerd
+# 1
+# 2
+# cse
+# ece
+# cse
+# ece
+# mech
+
+
+class method vs static method
+# Python program to demonstrate
+# use of class method and static method.
+from datetime import date
+
+class Person:
+	def __init__(self, name, age):
+		self.name = name
+		self.age = age
+
+	# a class method to create a Person object by birth year.
+	@classmethod
+	def fromBirthYear(cls, name, year):
+		return cls(name, date.today().year - year)
+
+	# a static method to check if a Person is adult or not.
+	@staticmethod
+	def isAdult(age):
+		return age > 18
+
+person1 = Person('mayank', 21)
+person2 = Person.fromBirthYear('mayank', 1996)
+
+print (person1.age)
+print (person2.age)
+
+# print the result
+print (Person.isAdult(22))
+
+# Output:
+# 21
+# 25
+# True
