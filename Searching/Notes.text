@@ -1,0 +1,45 @@
+Searching Algorithms
+  - Linear Search
+  - Binary Search
+  - Ternary Search
+  - Jump Search
+  - Exponential Search
+
+Linear Search
+        Best    Worst
+Time    O(1)    O(n)
+  Compare the target to each of the number in the list.
+
+Binary Search
+Time    O(log n)
+Space   Recursion O(log n) | Iteration O(1)
+  Faster than linear search but only works on sorted lists
+  If list is not sorted, need to compare linear search vs sort + binary search
+  Divide the list into two halves
+  Middle = (left + right) // 2
+  if list[Middle] < target:
+    search list[Middle+1:]
+  elif list[Middle] > target:
+    search list[:Middle]
+  else return Middle
+
+Ternary Search
+Time    O(log3 n) but need more comparisons than binary search
+Binary search is faster than ternary search
+  Divide the list into three parts
+  partitionSize = (right - left) // 3
+  mid1 = left + partitionSize
+  mid2 = right - partitionSize
+
+Jump Search
+Time    O(sqrt(n))
+  Not faster than binary search
+  Jump to the block where the target may exist. Linear search in that block
+  blockSize = sqrt(n)
+  two pointers - start, next
+      edge cases: start >= length    next >= length
+
+Exponential Search
+Time    O(log i) (i is the position where the target is)
+  Start from a small range and double the range if the target is not found
+  Then binary search the range containing the target - range: [bound/2, bound]
