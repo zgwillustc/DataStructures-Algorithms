@@ -1,0 +1,2 @@
+The implementation of array using Python is trivial.
+Python has built-in data structure - list - which is very versatile.
